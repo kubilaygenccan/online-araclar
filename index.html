@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevAracları - Ücretsiz Online Araçlar | QR Kod, JSON Formatter, Renk Paleti</title>
+    <meta name="description" content="Ücretsiz online araçlar: QR kod üretici, JSON formatter, renk paleti üretici, favicon üretici, Lorem Ipsum üretici, karakter sayacı. Hızlı, güvenli, reklamsız.">
+    <meta name="keywords" content="online araçlar, QR kod üretici, JSON formatter, renk paleti, favicon üretici, Lorem Ipsum üretici, karakter sayacı, kelime sayacı, online araçlar türkçe">
+    <meta name="author" content="DevAraçları">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://devaraclari.com/">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="DevAraçları - Ücretsiz Online Araçlar">
+    <meta property="og:description" content="Geliştiriciler ve tasarımcılar için ücretsiz online araçlar. QR kod üretici, JSON formatter, renk paleti ve daha fazlası.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devaraclari.com/">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="DevAraçları">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DevAraçları - Ücretsiz Online Araçlar">
+    <meta name="twitter:description" content="QR kod üretici, JSON formatter, renk paleti ve daha fazlası.">
+
+    <!-- Google AdSense Placeholder -->
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
+
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        :root {
+            --emerald: #059669;
+            --emerald-light: #10b981;
+            --emerald-dark: #047857;
+            --emerald-50: #ecfdf5;
+            --emerald-100: #d1fae5;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --white: #ffffff;
+            --red-500: #ef4444;
+            --red-100: #fee2e2;
+            --yellow-500: #eab308;
+            --blue-500: #3b82f6;
+            --radius: 12px;
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow: 0 1px 3px rgba(0,0,0,0.1), 0 1px 2px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--slate-100);
+            color: var(--slate-800);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--slate-900) 0%, var(--slate-800) 100%);
+            color: var(--white);
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--white);
+            cursor: pointer;
+        }
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-light) 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        .logo-text h1 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        .logo-text p {
+            font-size: 0.75rem;
+            color: var(--slate-400);
+            font-weight: 400;
+        }
+        .header-nav {
+            display: flex;
+            gap: 0.5rem;
+        }
+        .back-btn {
+            display: none;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.875rem;
+            transition: var(--transition);
+        }
+        .back-btn:hover { background: rgba(255,255,255,0.2); }
+        .back-btn.visible { display: flex; }
+
+        /* Main */
+        main {
+            flex: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            width: 100%;
+        }
+
+        /* Landing */
+        .landing-hero {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        .landing-hero h2 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            margin-bottom: 0.5rem;
+        }
+        .landing-hero p {
+            color: var(--slate-500);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Tool Cards Grid */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+        }
+        .tool-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.75rem;
+            cursor: pointer;
+            transition: var(--transition);
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            overflow: hidden;
+        }
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--emerald), var(--emerald-light));
+            opacity: 0;
+            transition: var(--transition);
+        }
+        .tool-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--emerald);
+        }
+        .tool-card:hover::before { opacity: 1; }
+        .tool-card-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            background: var(--emerald-50);
+        }
+        .tool-card h3 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 0.4rem;
+        }
+        .tool-card p {
+            color: var(--slate-500);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .tool-card-arrow {
+            position: absolute;
+            right: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--slate-300);
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+        .tool-card:hover .tool-card-arrow {
+            color: var(--emerald);
+            transform: translateY(-50%) translateX(4px);
+        }
+
+        /* Ad Placeholder */
+        .ad-placeholder {
+            background: var(--slate-50);
+            border: 2px dashed var(--slate-300);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            text-align: center;
+            color: var(--slate-400);
+            font-size: 0.85rem;
+            margin: 2rem 0;
+        }
+
+        /* Tool Views */
+        .tool-view {
+            display: none;
+            animation: fadeInUp 0.3s ease;
+        }
+        .tool-view.active { display: block; }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tool-header {
+            margin-bottom: 1.5rem;
+        }
+        .tool-header h2 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--slate-900);
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .tool-header p {
+            color: var(--slate-500);
+            margin-top: 0.3rem;
+        }
+
+        /* Common form elements */
+        .panel {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1.5rem;
+            border: 1px solid var(--slate-200);
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
+        }
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.875rem;
+            color: var(--slate-700);
+            margin-bottom: 0.4rem;
+        }
+        input[type="text"], input[type="number"], input[type="color"], textarea, select {
+            width: 100%;
+            padding: 0.65rem 0.85rem;
+            border: 1.5px solid var(--slate-300);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-family: inherit;
+            transition: var(--transition);
+            background: var(--white);
+            color: var(--slate-800);
+        }
+        input:focus, textarea:focus, select:focus {
+            outline: none;
+            border-color: var(--emerald);
+            box-shadow: 0 0 0 3px rgba(5,150,105,0.15);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.85rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+            font-family: inherit;
+        }
+        .btn-primary {
+            background: linear-gradient(135deg, var(--emerald) 0%, var(--emerald-dark) 100%);
+            color: var(--white);
+            box-shadow: 0 2px 8px rgba(5,150,105,0.3);
+        }
+        .btn-primary:hover {
+            box-shadow: 0 4px 14px rgba(5,150,105,0.4);
+            transform: translateY(-1px);
+        }
+        .btn-secondary {
+            background: var(--slate-100);
+            color: var(--slate-700);
+            border: 1px solid var(--slate-300);
+        }
+        .btn-secondary:hover { background: var(--slate-200); }
+        .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+
+        .btn-group {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 0.75rem;
+        }
+
+        .form-group { margin-bottom: 1rem; }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        /* Result areas */
+        .result-area {
+            background: var(--slate-50);
+            border: 1px solid var(--slate-200);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-top: 1rem;
+            min-height: 60px;
+        }
+        pre.code-output {
+            background: var(--slate-900);
+            color: #e2e8f0;
+            border-radius: 8px;
+            padding: 1rem;
+            overflow-x: auto;
+            font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.82rem;
+            line-height: 1.6;
+            max-height: 500px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 1rem;
+        }
+        .stat-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 1rem;
+            text-align: center;
+            border: 1px solid var(--slate-200);
+        }
+        .stat-card .value {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--emerald);
+            line-height: 1.2;
+        }
+        .stat-card .label {
+            font-size: 0.8rem;
+            color: var(--slate-500);
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        /* Color palette */
+        .palette-row {
+            display: flex;
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 120px;
+            box-shadow: var(--shadow-md);
+            margin-bottom: 1rem;
+        }
+        .palette-swatch {
+            flex: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            padding-bottom: 0.6rem;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+        }
+        .palette-swatch:hover { flex: 1.3; }
+        .palette-swatch span {
+            background: rgba(0,0,0,0.45);
+            color: var(--white);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            font-family: monospace;
+            backdrop-filter: blur(4px);
+        }
+
+        .color-scheme-tabs {
+            display: flex;
+            gap: 0.3rem;
+            margin-bottom: 1rem;
+            background: var(--slate-100);
+            padding: 0.25rem;
+            border-radius: 8px;
+        }
+        .scheme-tab {
+            flex: 1;
+            padding: 0.5rem;
+            text-align: center;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--slate-500);
+            transition: var(--transition);
+            border: none;
+            background: transparent;
+            font-family: inherit;
+        }
+        .scheme-tab.active {
+            background: var(--white);
+            color: var(--emerald);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* JSON Tree */
+        .json-tree { font-family: monospace; font-size: 0.85rem; line-height: 1.7; }
+        .json-tree .key { color: #7c3aed; font-weight: 600; }
+        .json-tree .string { color: var(--emerald); }
+        .json-tree .number { color: var(--blue-500); }
+        .json-tree .boolean { color: #d97706; font-weight: 600; }
+        .json-tree .null-val { color: var(--slate-400); font-style: italic; }
+        .json-tree .toggle {
+            cursor: pointer;
+            user-select: none;
+            display: inline-block;
+            width: 1rem;
+            text-align: center;
+            color: var(--slate-400);
+        }
+        .json-tree .toggle:hover { color: var(--emerald); }
+        .json-tree .collapsible { margin-left: 1.2rem; }
+        .json-tree .collapsed { display: none; }
+        .json-error {
+            color: var(--red-500);
+            background: var(--red-100);
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+
+        /* Favicon preview */
+        .favicon-preview {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .favicon-item {
+            text-align: center;
+        }
+        .favicon-item canvas {
+            border: 2px solid var(--slate-200);
+            border-radius: 4px;
+            image-rendering: pixelated;
+        }
+        .favicon-item p {
+            margin-top: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--slate-500);
+        }
+
+        /* Toast */
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: var(--slate-900);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            z-index: 1000;
+            box-shadow: var(--shadow-xl);
+            transition: transform 0.3s ease;
+            pointer-events: none;
+        }
+        .toast.show { transform: translateX(-50%) translateY(0); }
+
+        /* Footer */
+        .footer {
+            background: var(--slate-900);
+            color: var(--slate-400);
+            text-align: center;
+            padding: 2rem 1.5rem;
+            margin-top: auto;
+        }
+        .footer a { color: var(--emerald-light); text-decoration: none; }
+        .footer p { font-size: 0.85rem; }
+
+        /* Print */
+        @media print {
+            .header, .footer, .ad-placeholder, .btn, .back-btn { display: none !important; }
+            main { padding: 0; }
+            .tool-view { page-break-inside: avoid; }
+        }
+
+        /* Mobile */
+        @media (max-width: 640px) {
+            .tools-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .landing-hero h2 { font-size: 1.5rem; }
+            .logo-text p { display: none; }
+            .stat-grid { grid-template-columns: repeat(2, 1fr); }
+            .palette-row { height: 90px; }
+            .tool-header h2 { font-size: 1.3rem; }
+            .header-inner { padding: 0.75rem 1rem; }
+            main { padding: 1.25rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="header-inner">
+        <a class="logo" onclick="showLanding()">
+            <div class="logo-icon">DA</div>
+            <div class="logo-text">
+                <h1>DevAracları</h1>
+                <p>Ücretsiz Online Araçlar</p>
+            </div>
+        </a>
+        <nav class="header-nav">
+            <button class="back-btn" id="backBtn" onclick="showLanding()">
+                <span>&#8592;</span> Araçlar
+            </button>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Landing Page -->
+    <div id="landing">
+        <div class="landing-hero">
+            <h2>Geliştirici Araçları</h2>
+            <p>Hızlı, güvenli ve tamamen ücretsiz online araçlar. Verileriniz tarayıcınızdan ayrılmaz.</p>
+        </div>
+
+        <!-- AdSense Placeholder -->
+        <!-- <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins> -->
+        <!-- <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+
+        <div class="tools-grid">
+            <div class="tool-card" onclick="openTool('qr')">
+                <div class="tool-card-icon">&#9783;</div>
+                <h3>QR Kod Üretici</h3>
+                <p>Metin veya URL'den QR kod oluşturun ve PNG olarak indirin.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+            <div class="tool-card" onclick="openTool('palette')">
+                <div class="tool-card-icon">&#127912;</div>
+                <h3>Renk Paleti Üretici</h3>
+                <p>Uyumlu renk paletleri oluşturun. Tamamlayıcı, analog ve üçlü şemalar.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+            <div class="tool-card" onclick="openTool('favicon')">
+                <div class="tool-card-icon">&#11088;</div>
+                <h3>Favicon Üretici</h3>
+                <p>Emoji veya metinden 32x32 ve 16x16 favicon oluşturun.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+            <div class="tool-card" onclick="openTool('json')">
+                <div class="tool-card-icon">{ }</div>
+                <h3>JSON Formatter</h3>
+                <p>JSON verilerini biçimlendirin, doğrulayın, küçültün veya ağaç görünümünde inceleyin.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+            <div class="tool-card" onclick="openTool('lorem')">
+                <div class="tool-card-icon">&#9998;</div>
+                <h3>Lorem Ipsum Üretici</h3>
+                <p>Türkçe yer tutucu metin oluşturun. Paragraf, cümle veya kelime.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+            <div class="tool-card" onclick="openTool('counter')">
+                <div class="tool-card-icon">&#128220;</div>
+                <h3>Karakter / Kelime Sayacı</h3>
+                <p>Karakter, kelime, cümle sayısı ve tahmini okuma süresi.</p>
+                <span class="tool-card-arrow">&#8594;</span>
+            </div>
+        </div>
+
+        <div class="ad-placeholder">
+            <!-- AdSense Banner Alanı -->
+            Reklam Alanı (728x90)
+        </div>
+    </div>
+
+    <!-- QR Code Tool -->
+    <div class="tool-view" id="tool-qr">
+        <div class="tool-header">
+            <h2>&#9783; QR Kod Üretici</h2>
+            <p>Metin veya URL girin, QR kodu oluşturun ve indirin.</p>
+        </div>
+        <div class="panel">
+            <div class="form-group">
+                <label for="qrInput">Metin veya URL</label>
+                <input type="text" id="qrInput" placeholder="https://ornek.com veya herhangi bir metin" value="https://devaraclari.com">
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="qrSize">Boyut (px)</label>
+                    <select id="qrSize">
+                        <option value="200">200x200</option>
+                        <option value="300" selected>300x300</option>
+                        <option value="400">400x400</option>
+                        <option value="512">512x512</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="qrColor">Renk</label>
+                    <input type="color" id="qrColor" value="#0f172a" style="height:40px;">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="generateQR()">QR Kod Oluştur</button>
+                <button class="btn btn-secondary" id="qrDownloadBtn" onclick="downloadQR()" style="display:none;">PNG İndir</button>
+            </div>
+        </div>
+        <div class="panel" id="qrResult" style="display:none; text-align:center;">
+            <canvas id="qrCanvas"></canvas>
+        </div>
+    </div>
+
+    <!-- Color Palette Tool -->
+    <div class="tool-view" id="tool-palette">
+        <div class="tool-header">
+            <h2>&#127912; Renk Paleti Üretici</h2>
+            <p>Uyumlu renk paletleri oluşturun ve hex kodlarını kopyalayın.</p>
+        </div>
+        <div class="panel">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="baseColor">Temel Renk</label>
+                    <input type="color" id="baseColor" value="#059669" style="height:44px;">
+                </div>
+                <div class="form-group" style="display:flex; align-items:flex-end;">
+                    <button class="btn btn-primary" onclick="generatePalette()" style="width:100%;">Palet Oluştur</button>
+                </div>
+            </div>
+            <div class="color-scheme-tabs">
+                <button class="scheme-tab active" onclick="setScheme('harmony', this)">Uyumlu</button>
+                <button class="scheme-tab" onclick="setScheme('complementary', this)">Tamamlayıcı</button>
+                <button class="scheme-tab" onclick="setScheme('analogous', this)">Analog</button>
+                <button class="scheme-tab" onclick="setScheme('triadic', this)">Üçlü</button>
+            </div>
+        </div>
+        <div class="panel" id="paletteResult">
+            <div class="palette-row" id="paletteRow"></div>
+            <p style="text-align:center; color:var(--slate-400); font-size:0.82rem;">Renklere tıklayarak hex kodunu kopyalayın</p>
+        </div>
+    </div>
+
+    <!-- Favicon Tool -->
+    <div class="tool-view" id="tool-favicon">
+        <div class="tool-header">
+            <h2>&#11088; Favicon Üretici</h2>
+            <p>Emoji veya metin girerek favicon oluşturun.</p>
+        </div>
+        <div class="panel">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="faviconInput">Emoji veya Metin (1-2 karakter)</label>
+                    <input type="text" id="faviconInput" value="&#128640;" maxlength="2" style="font-size:1.5rem; text-align:center;">
+                </div>
+                <div class="form-group">
+                    <label for="favBgColor">Arka Plan Rengi</label>
+                    <input type="color" id="favBgColor" value="#059669" style="height:44px;">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="favShape">Biçim</label>
+                <select id="favShape">
+                    <option value="rounded">Yuvarlatılmış Kare</option>
+                    <option value="circle">Daire</option>
+                    <option value="square">Kare</option>
+                </select>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="generateFavicon()">Favicon Oluştur</button>
+                <button class="btn btn-secondary" id="favDownload32" onclick="downloadFavicon(32)" style="display:none;">32x32 PNG İndir</button>
+                <button class="btn btn-secondary" id="favDownload16" onclick="downloadFavicon(16)" style="display:none;">16x16 PNG İndir</button>
+            </div>
+        </div>
+        <div class="panel" id="faviconResult" style="display:none;">
+            <div class="favicon-preview">
+                <div class="favicon-item">
+                    <canvas id="favCanvas32" width="32" height="32" style="width:128px;height:128px;"></canvas>
+                    <p>32x32</p>
+                </div>
+                <div class="favicon-item">
+                    <canvas id="favCanvas16" width="16" height="16" style="width:96px;height:96px;"></canvas>
+                    <p>16x16</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JSON Formatter Tool -->
+    <div class="tool-view" id="tool-json">
+        <div class="tool-header">
+            <h2>{ } JSON Formatter</h2>
+            <p>JSON verilerini biçimlendirin, doğrulayın ve inceleyin.</p>
+        </div>
+        <div class="panel">
+            <div class="form-group">
+                <label for="jsonInput">JSON Girin</label>
+                <textarea id="jsonInput" rows="8" placeholder='{"ad": "DevAraçları", "versiyon": 1.0}'></textarea>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="formatJSON()">Biçimlendir</button>
+                <button class="btn btn-secondary" onclick="minifyJSON()">Küçült</button>
+                <button class="btn btn-secondary" onclick="showJSONTree()">Ağaç Görünümü</button>
+                <button class="btn btn-secondary" onclick="copyJSONOutput()">Kopyala</button>
+                <button class="btn btn-secondary" onclick="clearJSON()">Temizle</button>
+            </div>
+        </div>
+        <div class="panel" id="jsonResultPanel" style="display:none;">
+            <div id="jsonError" class="json-error" style="display:none;"></div>
+            <pre class="code-output" id="jsonOutput" style="display:none;"></pre>
+            <div class="json-tree" id="jsonTree" style="display:none;"></div>
+        </div>
+    </div>
+
+    <!-- Lorem Ipsum Tool -->
+    <div class="tool-view" id="tool-lorem">
+        <div class="tool-header">
+            <h2>&#9998; Lorem Ipsum Üretici</h2>
+            <p>Türkçe yer tutucu metin oluşturun.</p>
+        </div>
+        <div class="panel">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="loremType">Tür</label>
+                    <select id="loremType">
+                        <option value="paragraphs">Paragraf</option>
+                        <option value="sentences">Cümle</option>
+                        <option value="words">Kelime</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="loremCount">Adet</label>
+                    <input type="number" id="loremCount" value="3" min="1" max="50">
+                </div>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary" onclick="generateLorem()">Metin Oluştur</button>
+                <button class="btn btn-secondary" onclick="copyLorem()">Kopyala</button>
+            </div>
+        </div>
+        <div class="panel" id="loremResult" style="display:none;">
+            <div id="loremOutput" style="line-height:1.8; color:var(--slate-700); white-space:pre-wrap;"></div>
+        </div>
+    </div>
+
+    <!-- Character Counter Tool -->
+    <div class="tool-view" id="tool-counter">
+        <div class="tool-header">
+            <h2>&#128220; Karakter / Kelime Sayacı</h2>
+            <p>Metninizin istatistiklerini anında görün.</p>
+        </div>
+        <div class="panel">
+            <div class="form-group">
+                <label for="counterInput">Metin Girin</label>
+                <textarea id="counterInput" rows="8" placeholder="Analiz etmek istediğiniz metni buraya yapıştırın..." oninput="updateCounter()"></textarea>
+            </div>
+        </div>
+        <div class="stat-grid" id="counterStats">
+            <div class="stat-card"><div class="value" id="statChars">0</div><div class="label">Karakter</div></div>
+            <div class="stat-card"><div class="value" id="statCharsNoSpace">0</div><div class="label">Karakter (Boşluksuz)</div></div>
+            <div class="stat-card"><div class="value" id="statWords">0</div><div class="label">Kelime</div></div>
+            <div class="stat-card"><div class="value" id="statSentences">0</div><div class="label">Cümle</div></div>
+            <div class="stat-card"><div class="value" id="statParagraphs">0</div><div class="label">Paragraf</div></div>
+            <div class="stat-card"><div class="value" id="statReadTime">0 dk</div><div class="label">Okuma Süresi</div></div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2026 DevAracları. Tüm hakları saklıdır.</p>
+    <p style="margin-top:0.4rem; font-size:0.78rem;">Tüm işlemler tarayıcınızda gerçekleşir. Verileriniz sunucuya gönderilmez.</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ========== Navigation ========== */
+function showLanding() {
+    document.getElementById('landing').style.display = '';
+    document.querySelectorAll('.tool-view').forEach(v => v.classList.remove('active'));
+    document.getElementById('backBtn').classList.remove('visible');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+}
+function openTool(id) {
+    document.getElementById('landing').style.display = 'none';
+    document.querySelectorAll('.tool-view').forEach(v => v.classList.remove('active'));
+    document.getElementById('tool-' + id).classList.add('active');
+    document.getElementById('backBtn').classList.add('visible');
+    window.scrollTo({top: 0, behavior: 'smooth'});
+    if (id === 'palette') generatePalette();
+}
+
+function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+}
+
+/* ========== QR Code Generator (Canvas-based) ========== */
+/* Minimal QR Code encoder — supports alphanumeric/byte mode, version 1-10, ECC-L */
+const QR = (() => {
+    // Galois field GF(256) with primitive polynomial 0x11d
+    const EXP = new Uint8Array(512), LOG = new Uint8Array(256);
+    {
+        let x = 1;
+        for (let i = 0; i < 255; i++) { EXP[i] = x; LOG[x] = i; x = (x << 1) ^ (x & 128 ? 0x11d : 0); }
+        for (let i = 255; i < 512; i++) EXP[i] = EXP[i - 255];
+    }
+    function gfMul(a, b) { return a === 0 || b === 0 ? 0 : EXP[LOG[a] + LOG[b]]; }
+    function polyMul(a, b) {
+        const r = new Uint8Array(a.length + b.length - 1);
+        for (let i = 0; i < a.length; i++) for (let j = 0; j < b.length; j++) r[i+j] ^= gfMul(a[i], b[j]);
+        return r;
+    }
+    function genPoly(n) {
+        let p = new Uint8Array([1]);
+        for (let i = 0; i < n; i++) p = polyMul(p, new Uint8Array([1, EXP[i]]));
+        return p;
+    }
+    function eccEncode(data, eccLen) {
+        const gen = genPoly(eccLen);
+        const msg = new Uint8Array(data.length + eccLen);
+        msg.set(data);
+        for (let i = 0; i < data.length; i++) {
+            const coef = msg[i];
+            if (coef !== 0) for (let j = 0; j < gen.length; j++) msg[i+j] ^= gfMul(gen[j], coef);
+        }
+        return msg.slice(data.length);
+    }
+
+    // Version info: [version, totalCodewords, dataCodewords(L), eccPerBlock(L), numBlocks(L)]
+    const VERSIONS = [
+        null,
+        [1,26,19,7,1],[2,44,34,10,1],[3,70,55,15,1],[4,100,80,20,1],[5,134,108,26,1],
+        [6,172,136,18,2],[7,196,156,20,2],[8,242,194,24,2],[9,292,232,30,2],[10,346,274,18,2]
+    ];
+
+    function getVersion(dataLen) {
+        // byte mode: 4 bits mode + 8/16 bit count + data + 4 bit terminator
+        for (let v = 1; v <= 10; v++) {
+            const countBits = v <= 9 ? 8 : 16;
+            const totalBits = 4 + countBits + dataLen * 8;
+            if (Math.ceil(totalBits / 8) <= VERSIONS[v][2]) return v;
+        }
+        return 10; // fallback
+    }
+
+    function encodeData(text) {
+        const bytes = new TextEncoder().encode(text);
+        const version = getVersion(bytes.length);
+        const vi = VERSIONS[version];
+        const totalDC = vi[2];
+        const eccPerBlock = vi[3];
+        const numBlocks = vi[1] === totalDC + eccPerBlock * numBlocks ? 1 : vi[4]; // simplified
+        const countBits = version <= 9 ? 8 : 16;
+
+        // Build bit stream
+        const bits = [];
+        function addBits(val, len) { for (let i = len - 1; i >= 0; i--) bits.push((val >> i) & 1); }
+
+        addBits(0b0100, 4); // Byte mode
+        addBits(bytes.length, countBits);
+        for (const b of bytes) addBits(b, 8);
+        addBits(0, Math.min(4, totalDC * 8 - bits.length)); // Terminator
+
+        while (bits.length % 8) bits.push(0); // Pad to byte
+        const padBytes = [0xEC, 0x11];
+        let pi = 0;
+        while (bits.length < totalDC * 8) { addBits(padBytes[pi % 2], 8); pi++; }
+
+        // Convert to bytes
+        const dataCW = new Uint8Array(totalDC);
+        for (let i = 0; i < totalDC; i++) {
+            let b = 0;
+            for (let j = 0; j < 8; j++) b = (b << 1) | bits[i*8+j];
+            dataCW[i] = b;
+        }
+
+        // Split into blocks and compute ECC
+        const blocks = [];
+        const eccBlocks = [];
+        const blockSize = Math.floor(totalDC / vi[4]);
+        const extraBlocks = totalDC - blockSize * vi[4];
+        let offset = 0;
+        for (let i = 0; i < vi[4]; i++) {
+            const sz = blockSize + (i >= vi[4] - extraBlocks ? 1 : 0);
+            const block = dataCW.slice(offset, offset + sz);
+            blocks.push(block);
+            eccBlocks.push(eccEncode(block, eccPerBlock));
+            offset += sz;
+        }
+
+        // Interleave
+        const result = [];
+        const maxBlock = blocks.reduce((m, b) => Math.max(m, b.length), 0);
+        for (let i = 0; i < maxBlock; i++) for (const b of blocks) if (i < b.length) result.push(b[i]);
+        for (let i = 0; i < eccPerBlock; i++) for (const b of eccBlocks) result.push(b[i]);
+
+        return { version, codewords: result };
+    }
+
+    function createMatrix(version) {
+        const size = version * 4 + 17;
+        const matrix = Array.from({length: size}, () => new Int8Array(size)); // 0=empty, 1=black, -1=white
+        const reserved = Array.from({length: size}, () => new Uint8Array(size)); // 1=reserved
+
+        function setModule(r, c, dark) {
+            if (r >= 0 && r < size && c >= 0 && c < size) {
+                matrix[r][c] = dark ? 1 : -1;
+                reserved[r][c] = 1;
+            }
+        }
+
+        // Finder patterns
+        function finderPattern(row, col) {
+            for (let r = -1; r <= 7; r++) for (let c = -1; c <= 7; c++) {
+                const inOuter = r >= 0 && r <= 6 && c >= 0 && c <= 6;
+                const inInner = r >= 2 && r <= 4 && c >= 2 && c <= 4;
+                const inBorder = r === 0 || r === 6 || c === 0 || c === 6;
+                const dark = inInner || (inOuter && inBorder);
+                setModule(row + r, col + c, dark);
+            }
+        }
+        finderPattern(0, 0);
+        finderPattern(0, size - 7);
+        finderPattern(size - 7, 0);
+
+        // Timing patterns
+        for (let i = 8; i < size - 8; i++) {
+            setModule(6, i, i % 2 === 0);
+            setModule(i, 6, i % 2 === 0);
+        }
+
+        // Alignment patterns (version >= 2)
+        if (version >= 2) {
+            const positions = [6, version * 4 + 10]; // simplified for small versions
+            if (version >= 7) positions.splice(1, 0, Math.round((positions[0] + positions[1]) / 2));
+            for (const r of positions) for (const c of positions) {
+                if (reserved[r] && reserved[r][c]) continue;
+                for (let dr = -2; dr <= 2; dr++) for (let dc = -2; dc <= 2; dc++) {
+                    setModule(r + dr, c + dc, Math.abs(dr) === 2 || Math.abs(dc) === 2 || (dr === 0 && dc === 0));
+                }
+            }
+        }
+
+        // Dark module
+        setModule(size - 8, 8, true);
+
+        // Reserve format info areas
+        for (let i = 0; i < 8; i++) {
+            if (!reserved[8][i]) { reserved[8][i] = 1; }
+            if (!reserved[8][size-1-i]) { reserved[8][size-1-i] = 1; }
+            if (!reserved[i][8]) { reserved[i][8] = 1; }
+            if (!reserved[size-1-i][8]) { reserved[size-1-i][8] = 1; }
+        }
+        reserved[8][8] = 1;
+
+        return { matrix, reserved, size };
+    }
+
+    function placeData(matrix, reserved, size, codewords) {
+        const bits = [];
+        for (const cw of codewords) for (let i = 7; i >= 0; i--) bits.push((cw >> i) & 1);
+        // Pad remainder
+        const remainder = [0,0,7,7,7,7,7,0,0,0,0,0][Math.min(11, matrix.length)] || 0;
+        for (let i = 0; i < remainder; i++) bits.push(0);
+
+        let idx = 0;
+        let upward = true;
+        for (let right = size - 1; right >= 1; right -= 2) {
+            if (right === 6) right = 5; // Skip timing column
+            const rows = upward ? Array.from({length: size}, (_, i) => size - 1 - i) : Array.from({length: size}, (_, i) => i);
+            for (const row of rows) {
+                for (const col of [right, right - 1]) {
+                    if (!reserved[row][col]) {
+                        matrix[row][col] = (idx < bits.length && bits[idx]) ? 1 : -1;
+                        idx++;
+                    }
+                }
+            }
+            upward = !upward;
+        }
+    }
+
+    function applyMask(matrix, reserved, size, mask) {
+        const fns = [
+            (r,c) => (r+c)%2===0,
+            (r,c) => r%2===0,
+            (r,c) => c%3===0,
+            (r,c) => (r+c)%3===0,
+            (r,c) => (Math.floor(r/2)+Math.floor(c/3))%2===0,
+            (r,c) => (r*c)%2+(r*c)%3===0,
+            (r,c) => ((r*c)%2+(r*c)%3)%2===0,
+            (r,c) => ((r+c)%2+(r*c)%3)%2===0,
+        ];
+        const fn = fns[mask];
+        for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) {
+            if (!reserved[r][c] && fn(r, c)) matrix[r][c] *= -1;
+        }
+    }
+
+    function writeFormatInfo(matrix, size, mask) {
+        // ECC level L = 01, mask pattern
+        const FORMAT_BITS = [
+            0x77c4,0x72f3,0x7daa,0x789d,0x662f,0x6318,0x6c41,0x6976,
+        ];
+        const info = FORMAT_BITS[mask];
+        const bits = [];
+        for (let i = 14; i >= 0; i--) bits.push((info >> i) & 1);
+
+        // Around top-left finder
+        const positions1 = [[0,8],[1,8],[2,8],[3,8],[4,8],[5,8],[7,8],[8,8],[8,7],[8,5],[8,4],[8,3],[8,2],[8,1],[8,0]];
+        for (let i = 0; i < 15; i++) {
+            const dark = bits[i] ? 1 : -1;
+            matrix[positions1[i][0]][positions1[i][1]] = dark;
+        }
+        // Around other finders
+        const positions2 = [[8,size-1],[8,size-2],[8,size-3],[8,size-4],[8,size-5],[8,size-6],[8,size-7],[8,size-8],[size-7,8],[size-6,8],[size-5,8],[size-4,8],[size-3,8],[size-2,8],[size-1,8]];
+        for (let i = 0; i < 15; i++) {
+            const dark = bits[i] ? 1 : -1;
+            matrix[positions2[i][0]][positions2[i][1]] = dark;
+        }
+    }
+
+    function penalty(matrix, size) {
+        let score = 0;
+        // Rule 1: runs of same color
+        for (let r = 0; r < size; r++) {
+            let run = 1;
+            for (let c = 1; c < size; c++) {
+                if (matrix[r][c] === matrix[r][c-1]) { run++; }
+                else { if (run >= 5) score += run - 2; run = 1; }
+            }
+            if (run >= 5) score += run - 2;
+        }
+        for (let c = 0; c < size; c++) {
+            let run = 1;
+            for (let r = 1; r < size; r++) {
+                if (matrix[r][c] === matrix[r-1][c]) { run++; }
+                else { if (run >= 5) score += run - 2; run = 1; }
+            }
+            if (run >= 5) score += run - 2;
+        }
+        return score;
+    }
+
+    function generate(text) {
+        const { version, codewords } = encodeData(text);
+        let bestMatrix, bestScore = Infinity;
+        for (let mask = 0; mask < 8; mask++) {
+            const { matrix, reserved, size } = createMatrix(version);
+            placeData(matrix, reserved, size, codewords);
+            applyMask(matrix, reserved, size, mask);
+            writeFormatInfo(matrix, size, mask);
+            const s = penalty(matrix, size);
+            if (s < bestScore) { bestScore = s; bestMatrix = { matrix, size }; }
+        }
+        return bestMatrix;
+    }
+
+    function render(canvas, text, pixelSize, color) {
+        const { matrix, size } = generate(text);
+        const quiet = 4;
+        const totalSize = (size + quiet * 2) * pixelSize;
+
+        // Use a temporary canvas at exact module resolution, then scale
+        const moduleCanvas = document.createElement('canvas');
+        const moduleSize = size + quiet * 2;
+        moduleCanvas.width = moduleSize;
+        moduleCanvas.height = moduleSize;
+        const mctx = moduleCanvas.getContext('2d');
+        mctx.fillStyle = '#ffffff';
+        mctx.fillRect(0, 0, moduleSize, moduleSize);
+        mctx.fillStyle = color || '#000000';
+        for (let r = 0; r < size; r++) for (let c = 0; c < size; c++) {
+            if (matrix[r][c] === 1) mctx.fillRect(c + quiet, r + quiet, 1, 1);
+        }
+
+        canvas.width = parseInt(pixelSize);
+        canvas.height = parseInt(pixelSize);
+        const ctx = canvas.getContext('2d');
+        ctx.imageSmoothingEnabled = false;
+        ctx.drawImage(moduleCanvas, 0, 0, canvas.width, canvas.height);
+    }
+
+    return { render };
+})();
+
+function generateQR() {
+    const text = document.getElementById('qrInput').value.trim();
+    if (!text) { showToast('Lütfen bir metin girin'); return; }
+    const size = document.getElementById('qrSize').value;
+    const color = document.getElementById('qrColor').value;
+    const canvas = document.getElementById('qrCanvas');
+    try {
+        QR.render(canvas, text, size, color);
+        document.getElementById('qrResult').style.display = '';
+        document.getElementById('qrDownloadBtn').style.display = '';
+    } catch(e) {
+        showToast('QR kod oluşturulamadı. Metin çok uzun olabilir.');
+    }
+}
+function downloadQR() {
+    const canvas = document.getElementById('qrCanvas');
+    const a = document.createElement('a');
+    a.download = 'qr-kod.png';
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+}
+
+/* ========== Color Palette ========== */
+let currentScheme = 'harmony';
+
+function hexToHSL(hex) {
+    let r = parseInt(hex.slice(1,3),16)/255, g = parseInt(hex.slice(3,5),16)/255, b = parseInt(hex.slice(5,7),16)/255;
+    const max = Math.max(r,g,b), min = Math.min(r,g,b), d = max - min;
+    let h = 0, s = 0, l = (max + min) / 2;
+    if (d !== 0) {
+        s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+        switch(max) {
+            case r: h = ((g-b)/d + (g<b?6:0))/6; break;
+            case g: h = ((b-r)/d + 2)/6; break;
+            case b: h = ((r-g)/d + 4)/6; break;
+        }
+    }
+    return [h*360, s*100, l*100];
+}
+function hslToHex(h, s, l) {
+    h = ((h % 360) + 360) % 360;
+    s = Math.max(0, Math.min(100, s)) / 100;
+    l = Math.max(0, Math.min(100, l)) / 100;
+    const a = s * Math.min(l, 1-l);
+    const f = n => { const k = (n + h/30) % 12; return l - a * Math.max(-1, Math.min(k-3, 9-k, 1)); };
+    const toHex = x => Math.round(x * 255).toString(16).padStart(2, '0');
+    return '#' + toHex(f(0)) + toHex(f(8)) + toHex(f(4));
+}
+
+function setScheme(scheme, el) {
+    currentScheme = scheme;
+    document.querySelectorAll('.scheme-tab').forEach(t => t.classList.remove('active'));
+    if (el) el.classList.add('active');
+    generatePalette();
+}
+
+function generatePalette() {
+    const base = document.getElementById('baseColor').value;
+    const [h, s, l] = hexToHSL(base);
+    let colors = [];
+
+    switch(currentScheme) {
+        case 'complementary':
+            colors = [
+                hslToHex(h, s, l),
+                hslToHex(h, s, Math.min(90, l + 15)),
+                hslToHex(h + 180, s, l),
+                hslToHex(h + 180, s, Math.min(90, l + 15)),
+                hslToHex(h + 180, Math.max(20, s - 20), Math.min(85, l + 25)),
+            ];
+            break;
+        case 'analogous':
+            colors = [
+                hslToHex(h - 30, s, l),
+                hslToHex(h - 15, s, Math.min(85, l + 10)),
+                hslToHex(h, s, l),
+                hslToHex(h + 15, s, Math.min(85, l + 10)),
+                hslToHex(h + 30, s, l),
+            ];
+            break;
+        case 'triadic':
+            colors = [
+                hslToHex(h, s, l),
+                hslToHex(h, Math.max(20, s - 30), Math.min(85, l + 20)),
+                hslToHex(h + 120, s, l),
+                hslToHex(h + 240, s, l),
+                hslToHex(h + 240, Math.max(20, s - 30), Math.min(85, l + 20)),
+            ];
+            break;
+        default: // harmony
+            colors = [
+                hslToHex(h, s, Math.max(15, l - 20)),
+                hslToHex(h + 10, Math.min(100, s + 10), l),
+                hslToHex(h, s, l),
+                hslToHex(h - 10, Math.max(20, s - 15), Math.min(85, l + 15)),
+                hslToHex(h + 5, Math.max(20, s - 30), Math.min(90, l + 30)),
+            ];
+    }
+
+    const row = document.getElementById('paletteRow');
+    row.innerHTML = colors.map(c =>
+        `<div class="palette-swatch" style="background:${c}" onclick="copyColor('${c}')"><span>${c.toUpperCase()}</span></div>`
+    ).join('');
+}
+
+function copyColor(hex) {
+    navigator.clipboard.writeText(hex).then(() => showToast(hex + ' kopyalandı!'));
+}
+
+/* ========== Favicon Generator ========== */
+function drawFavicon(canvas, text, bgColor, shape) {
+    const size = canvas.width;
+    const ctx = canvas.getContext('2d');
+    ctx.clearRect(0, 0, size, size);
+
+    // Background shape
+    ctx.fillStyle = bgColor;
+    if (shape === 'circle') {
+        ctx.beginPath();
+        ctx.arc(size/2, size/2, size/2, 0, Math.PI*2);
+        ctx.fill();
+    } else if (shape === 'rounded') {
+        const r = size * 0.2;
+        ctx.beginPath();
+        ctx.moveTo(r, 0);
+        ctx.lineTo(size - r, 0);
+        ctx.quadraticCurveTo(size, 0, size, r);
+        ctx.lineTo(size, size - r);
+        ctx.quadraticCurveTo(size, size, size - r, size);
+        ctx.lineTo(r, size);
+        ctx.quadraticCurveTo(0, size, 0, size - r);
+        ctx.lineTo(0, r);
+        ctx.quadraticCurveTo(0, 0, r, 0);
+        ctx.fill();
+    } else {
+        ctx.fillRect(0, 0, size, size);
+    }
+
+    // Text/Emoji
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    const fontSize = text.length > 1 ? size * 0.45 : size * 0.65;
+    ctx.font = `${fontSize}px "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", sans-serif`;
+    ctx.fillStyle = '#ffffff';
+    ctx.fillText(text, size/2, size/2 + size * 0.04);
+}
+
+function generateFavicon() {
+    const text = document.getElementById('faviconInput').value.trim() || 'A';
+    const bg = document.getElementById('favBgColor').value;
+    const shape = document.getElementById('favShape').value;
+
+    drawFavicon(document.getElementById('favCanvas32'), text, bg, shape);
+    drawFavicon(document.getElementById('favCanvas16'), text, bg, shape);
+
+    document.getElementById('faviconResult').style.display = '';
+    document.getElementById('favDownload32').style.display = '';
+    document.getElementById('favDownload16').style.display = '';
+}
+
+function downloadFavicon(size) {
+    const canvas = document.getElementById('favCanvas' + size);
+    const a = document.createElement('a');
+    a.download = `favicon-${size}x${size}.png`;
+    a.href = canvas.toDataURL('image/png');
+    a.click();
+}
+
+/* ========== JSON Formatter ========== */
+function formatJSON() {
+    const input = document.getElementById('jsonInput').value.trim();
+    if (!input) { showToast('Lütfen JSON girin'); return; }
+    const panel = document.getElementById('jsonResultPanel');
+    const output = document.getElementById('jsonOutput');
+    const error = document.getElementById('jsonError');
+    const tree = document.getElementById('jsonTree');
+    panel.style.display = '';
+    tree.style.display = 'none';
+    try {
+        const parsed = JSON.parse(input);
+        output.textContent = JSON.stringify(parsed, null, 2);
+        output.style.display = '';
+        error.style.display = 'none';
+    } catch(e) {
+        error.textContent = 'JSON Hatası: ' + e.message;
+        error.style.display = '';
+        output.style.display = 'none';
+    }
+}
+function minifyJSON() {
+    const input = document.getElementById('jsonInput').value.trim();
+    if (!input) return;
+    const panel = document.getElementById('jsonResultPanel');
+    const output = document.getElementById('jsonOutput');
+    const error = document.getElementById('jsonError');
+    const tree = document.getElementById('jsonTree');
+    panel.style.display = '';
+    tree.style.display = 'none';
+    try {
+        const parsed = JSON.parse(input);
+        output.textContent = JSON.stringify(parsed);
+        output.style.display = '';
+        error.style.display = 'none';
+    } catch(e) {
+        error.textContent = 'JSON Hatası: ' + e.message;
+        error.style.display = '';
+        output.style.display = 'none';
+    }
+}
+function buildJSONTree(data, depth) {
+    if (depth > 20) return '<span class="null-val">[Çok derin]</span>';
+    if (data === null) return '<span class="null-val">null</span>';
+    if (typeof data === 'boolean') return `<span class="boolean">${data}</span>`;
+    if (typeof data === 'number') return `<span class="number">${data}</span>`;
+    if (typeof data === 'string') return `<span class="string">"${data.replace(/</g,'&lt;').replace(/>/g,'&gt;')}"</span>`;
+    const isArr = Array.isArray(data);
+    const entries = isArr ? data.map((v,i) => [i,v]) : Object.entries(data);
+    if (entries.length === 0) return isArr ? '[]' : '{}';
+    const id = 'jt' + Math.random().toString(36).slice(2,8);
+    let html = `<span class="toggle" onclick="this.textContent=this.textContent==='▼'?'▶':'▼';document.getElementById('${id}').classList.toggle('collapsed')">▼</span>${isArr ? '[' : '{'}`;
+    html += `<div class="collapsible" id="${id}">`;
+    for (const [k, v] of entries) {
+        html += '<div>';
+        if (!isArr) html += `<span class="key">"${k}"</span>: `;
+        html += buildJSONTree(v, depth + 1);
+        html += '</div>';
+    }
+    html += `</div>${isArr ? ']' : '}'}`;
+    return html;
+}
+function showJSONTree() {
+    const input = document.getElementById('jsonInput').value.trim();
+    if (!input) return;
+    const panel = document.getElementById('jsonResultPanel');
+    const output = document.getElementById('jsonOutput');
+    const error = document.getElementById('jsonError');
+    const tree = document.getElementById('jsonTree');
+    panel.style.display = '';
+    try {
+        const parsed = JSON.parse(input);
+        tree.innerHTML = buildJSONTree(parsed, 0);
+        tree.style.display = '';
+        output.style.display = 'none';
+        error.style.display = 'none';
+    } catch(e) {
+        error.textContent = 'JSON Hatası: ' + e.message;
+        error.style.display = '';
+        output.style.display = 'none';
+        tree.style.display = 'none';
+    }
+}
+function copyJSONOutput() {
+    const output = document.getElementById('jsonOutput');
+    if (output.style.display !== 'none' && output.textContent) {
+        navigator.clipboard.writeText(output.textContent).then(() => showToast('Kopyalandı!'));
+    }
+}
+function clearJSON() {
+    document.getElementById('jsonInput').value = '';
+    document.getElementById('jsonResultPanel').style.display = 'none';
+}
+
+/* ========== Lorem Ipsum (Turkish) ========== */
+const LOREM_WORDS = [
+    'acaba','acele','ancak','arada','aslında','ayrıca','bazı','belki','beri','bile','bir','birçok',
+    'birkaç','birlikte','böyle','büyük','çeşitli','çoğu','çok','çünkü','daha','dahi','de','değil',
+    'demek','diğer','dolayı','düşünce','eden','eğer','elbette','eski','fakat','geçen','genel',
+    'geniş','gerçek','gibi','göre','güzel','hâlâ','hatta','hem','henüz','her','herhangi','herkes',
+    'hızla','hiç','içerik','için','ileri','ilgili','ise','işte','kadar','karşı','kendi','kesin',
+    'kısa','konuda','küçük','layık','madem','nasıl','neden','nerede','neyse','olarak','olduğu',
+    'olmak','olması','ortaya','önemli','önce','öte','pek','sahip','sınıf','sonra','sonuç','süre',
+    'şekilde','şey','tabii','tamamen','toplam','tüm','türlü','uzun','üzere','var','veya','yani',
+    'yapılan','yeni','yerine','zaman','zaten','zor','alan','durum','bilgi','sistem','süreç','yöntem',
+    'proje','çalışma','değer','sonuç','hedef','kaynak','araç','yapı','gelişim','kullanım','tasarım',
+    'uygulama','temel','özellik','güvenlik','performans','kalite','verimli','modern','dijital'
+];
+
+function randomWord() { return LOREM_WORDS[Math.floor(Math.random() * LOREM_WORDS.length)]; }
+function capitalize(s) { return s.charAt(0).toLocaleUpperCase('tr') + s.slice(1); }
+function genSentence() {
+    const len = 6 + Math.floor(Math.random() * 12);
+    const words = Array.from({length: len}, randomWord);
+    words[0] = capitalize(words[0]);
+    return words.join(' ') + '.';
+}
+function genParagraph() {
+    const count = 3 + Math.floor(Math.random() * 5);
+    return Array.from({length: count}, genSentence).join(' ');
+}
+
+function generateLorem() {
+    const type = document.getElementById('loremType').value;
+    const count = Math.max(1, Math.min(50, parseInt(document.getElementById('loremCount').value) || 3));
+    let result = '';
+    switch(type) {
+        case 'paragraphs':
+            result = Array.from({length: count}, genParagraph).join('\n\n');
+            break;
+        case 'sentences':
+            result = Array.from({length: count}, genSentence).join(' ');
+            break;
+        case 'words':
+            result = Array.from({length: count}, randomWord).join(' ');
+            result = capitalize(result) + '.';
+            break;
+    }
+    document.getElementById('loremOutput').textContent = result;
+    document.getElementById('loremResult').style.display = '';
+}
+function copyLorem() {
+    const text = document.getElementById('loremOutput').textContent;
+    if (text) navigator.clipboard.writeText(text).then(() => showToast('Metin kopyalandı!'));
+}
+
+/* ========== Character Counter ========== */
+function updateCounter() {
+    const text = document.getElementById('counterInput').value;
+    const chars = text.length;
+    const charsNoSpace = text.replace(/\s/g, '').length;
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+    const sentences = text.trim() ? (text.match(/[.!?…]+/g) || []).length || (text.trim() ? 1 : 0) : 0;
+    const paragraphs = text.trim() ? text.split(/\n\s*\n/).filter(p => p.trim()).length || (text.trim() ? 1 : 0) : 0;
+    const readTime = Math.max(1, Math.ceil(words / 200));
+
+    document.getElementById('statChars').textContent = chars.toLocaleString('tr-TR');
+    document.getElementById('statCharsNoSpace').textContent = charsNoSpace.toLocaleString('tr-TR');
+    document.getElementById('statWords').textContent = words.toLocaleString('tr-TR');
+    document.getElementById('statSentences').textContent = sentences.toLocaleString('tr-TR');
+    document.getElementById('statParagraphs').textContent = paragraphs.toLocaleString('tr-TR');
+    document.getElementById('statReadTime').textContent = readTime + ' dk';
+}
+
+/* ========== Init ========== */
+document.addEventListener('DOMContentLoaded', () => {
+    generatePalette();
+    // Handle browser back
+    window.addEventListener('popstate', showLanding);
+});
+</script>
+
+<!-- Structured Data for SEO -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "DevAraçları",
+    "description": "Geliştiriciler ve tasarımcılar için ücretsiz online araçlar",
+    "url": "https://devaraclari.com",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "All",
+    "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "TRY"
+    },
+    "inLanguage": "tr"
+}
+</script>
+</body>
+</html>
